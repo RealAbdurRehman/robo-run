@@ -56,6 +56,10 @@ window.addEventListener("load", function() {
                 }
             })
             window.addEventListener("touchstart", event => {
+                if (!userHasInteracted) {
+                    userHasInteracted = true;
+                    backgroundMusic.play();
+                }
                 this.touchY = event.changedTouches[0].pageY;
             })
             window.addEventListener("touchmove", event => {
