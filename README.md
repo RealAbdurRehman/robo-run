@@ -42,4 +42,14 @@ The game supports both desktop and mobile platforms, providing smooth gameplay a
 
 ## Screenshots:
 
+### Running:
+![Demo](https://cloud-kpjv4nwjo-hack-club-bot.vercel.app/0screenshot_from_2024-11-25_13-03-42.png)
+
+### Jumping:
+![Demo](https://cloud-jha3bsb8m-hack-club-bot.vercel.app/0screenshot_from_2024-11-25_13-04-18.png)
+
+### Death Screen:
+![Demo](https://cloud-kw5chfkcn-hack-club-bot.vercel.app/0screenshot_from_2024-11-25_13-04-55.png)
+![Demo](https://cloud-2rtxruzrx-hack-club-bot.vercel.app/0screenshot_from_2024-11-25_13-04-32.png)
+
 Enjoy playing **Robo Run** and try to reach the highest score possible!
