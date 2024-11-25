@@ -45,7 +45,7 @@ window.addEventListener("load", function() {
                 if ((event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "ArrowLeft" || event.key === "ArrowRight") && this.keys.indexOf(event.key) === -1) {
                     this.keys.push(event.key);
                 } else if ((event.key === "r" || event.key === "R" || event.key === "Enter" || this.keys.indexOf("swipe down") > -1) && gameOver) {
-                    restartGame()
+                    restartGame();
                 } else if (event.key === "f" || event.key === "F") {
                     toggleFullScreen();
                 }
@@ -109,6 +109,10 @@ window.addEventListener("load", function() {
             this.sound.src = "./Public/Audio/running.wav";
             this.sound.loop = true;
         }
+        stopSound() {
+            this.sound.pause();
+            this.sound.currentTime = 0;
+        }
         playSound() {
             if (userHasInteracted) {
                 if (this.onGround() && this.sound.paused) {
@@ -153,6 +157,7 @@ window.addEventListener("load", function() {
                     enemies.forEach(enemy => {
                         enemy.stopSound();
                     })
+                    player.stopSound();
                 } else {
                     timeToScoreIncrement += deltaTime;
                     if (timeToScoreIncrement >= scoreInterval) {
