@@ -44,7 +44,7 @@ window.addEventListener("load", function() {
                 }
                 if ((event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "ArrowLeft" || event.key === "ArrowRight") && this.keys.indexOf(event.key) === -1) {
                     this.keys.push(event.key);
-                } else if ((event.key === "r" || event.key === "R" || event.key === "Enter" || this.keys.indexOf("swipe down") > -1) && gameOver) {
+                } else if ((event.key === "r" || event.key === "R" || event.key === "Enter" || this.keys.indexOf("swipe up") > -1) && gameOver) {
                     restartGame();
                 } else if (event.key === "f" || event.key === "F") {
                     toggleFullScreen();
@@ -65,11 +65,9 @@ window.addEventListener("load", function() {
             window.addEventListener("touchmove", event => {
                 const distance = event.changedTouches[0].pageY - this.touchY;
                 if (distance < -this.touchThreshold && this.keys.indexOf("swipe up") === -1) this.keys.push("swipe up");
-                else if (distance > this.touchThreshold && this.keys.indexOf("swipe down") === -1) this.keys.push("swipe down");
             })
             window.addEventListener("touchend", () => {
                 this.keys.splice(this.keys.indexOf("swipe up"), 1);
-                this.keys.splice(this.keys.indexOf("swipe down"), 1);
             })
         }
     }
@@ -447,9 +445,9 @@ window.addEventListener("load", function() {
             ctx.textAlign = "center";
             ctx.font = "40px Bokor";
             ctx.fillStyle = "#19332D";
-            ctx.fillText("GAME OVER, press R or swipe down to restart!", CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
+            ctx.fillText("GAME OVER, press R or swipe up to restart!", CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
             ctx.fillStyle = "#FDFCEC";
-            ctx.fillText("GAME OVER, press R or swipe down to restart!", CANVAS_WIDTH / 2 + 2, CANVAS_HEIGHT / 2 + 2);
+            ctx.fillText("GAME OVER, press R or swipe up to restart!", CANVAS_WIDTH / 2 + 2, CANVAS_HEIGHT / 2 + 2);
         }
     }
 
